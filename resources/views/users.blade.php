@@ -8,8 +8,10 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
-    <div id='calendar'></div>
+    <p>Lista de usuarios.</p>
+    @foreach ($users as $user)
+        
+    @endforeach
 @stop
 
 @section('css')
