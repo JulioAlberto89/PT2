@@ -10,21 +10,21 @@
     <form action="{{ route('event-types.store') }}" method="POST">
         @csrf
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Nombre</label>
             <input type="text" name="name" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="background_color">Background Color</label>
+            <label for="background_color">Color de fondo</label>
             <input type="text" name="background_color" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="text_color">Text Color</label>
+            <label for="text_color">Color de texto</label>
             <input type="text" name="text_color" class="form-control" required>
         </div>
         <div class="form-group">
-            <label for="border_color">Border Color</label>
+            <label for="border_color">Color de los bordes</label>
             <input type="text" name="border_color" class="form-control" required>
         </div>
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary">Crear</button>
     </form>
 @stop

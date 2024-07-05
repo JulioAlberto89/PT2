@@ -333,6 +333,20 @@ return [
             'url' => 'home',
             'icon' => 'fas fa-fw fa-lock',
         ],
+        [
+                'text' => 'Calendario (Prueba)',
+                'icon' => 'fas fa-fw fa-share',
+                'submenu' => [
+                    [
+                        'text' => 'Tipo de evento',
+                        'url' => 'event-types',
+                    ],
+                    [
+                        'text' => 'Calendario',
+                        'url' => 'home',
+                    ],
+                ],
+        ],
         // [
         //     'text' => 'multilevel',
         //     'icon' => 'fas fa-fw fa-share',
