@@ -51,6 +51,54 @@
             </div>
         </div>
     </div>
+
+    <!-- Edit Event Modal -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <form id="editEventForm" method="POST" action="">
+                @csrf
+                @method('PUT')
+                <input type="hidden" id="editEventId" name="event_id">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel">Editar Evento</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="editEventTitle">Título</label>
+                            <input type="text" class="form-control" id="editEventTitle" name="title" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventStart">Fecha de inicio</label>
+                            <input type="date" class="form-control" id="editEventStart" name="start_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventEnd">Fecha de fin</label>
+                            <input type="date" class="form-control" id="editEventEnd" name="end_date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEventTypeId">Tipo de evento</label>
+                            <select class="form-control" id="editEventTypeId" name="event_type_id" required>
+                                @foreach($eventTypes as $eventType)
+                                    <option value="{{ $eventType->id }}">{{ $eventType->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" class="btn btn-danger" id="deleteEvent">Eliminar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  </div>
 @stop
 
 @section('css')
