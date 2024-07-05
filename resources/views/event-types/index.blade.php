@@ -45,43 +45,46 @@
   
               <!-- Modal de edición para este tipo de evento -->
               <div class="modal fade" id="editEventTypeModal{{ $eventType->id }}" tabindex="-1" role="dialog" aria-labelledby="editEventTypeModalLabel{{ $eventType->id }}" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                          <div class="modal-header">
-                              <h5 class="modal-title" id="editEventTypeModalLabel{{ $eventType->id }}">Editar Tipo de Evento</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                  <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <form action="{{ route('event-types.update', $eventType->id) }}" method="POST">
-                              @csrf
-                              @method('PUT')
-                              <div class="modal-body">
-                                  <div class="form-group">
-                                      <label for="name">Nombre</label>
-                                      <input type="text" id="name" name="name" class="form-control" value="{{ $eventType->name }}" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="background_color">Color de fondo</label>
-                                      <input type="color" id="background_color" name="background_color" class="form-control jscolor" value="{{ $eventType->background_color }}" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="text_color">Color de texto</label>
-                                      <input type="color" id="text_color" name="text_color" class="form-control jscolor" value="{{ $eventType->text_color }}" required>
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="border_color">Color de los bordes</label>
-                                      <input type="color" id="border_color" name="border_color" class="form-control jscolor" value="{{ $eventType->border_color }}" required>
-                                  </div>
-                              </div>
-                              <div class="modal-footer">
-                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                  <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editEventTypeModalLabel{{ $eventType->id }}">Editar Tipo de Evento</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <form action="{{ route('event-types.update', $eventType->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <label for="name">Nombre</label>
+                                    <input type="text" id="name" name="name" class="form-control" value="{{ $eventType->name }}" required>
+                                </div>
+                                <div class="form-group" style="display: flex; justify-content: space-between;">
+                                    <div style="flex: 1; margin-right: 10px;">
+                                        <label for="background_color">Color de fondo</label>
+                                        <input type="color" id="background_color" name="background_color" class="form-control jscolor" value="{{ $eventType->background_color }}" required>
+                                    </div>
+                                    <div style="flex: 1; margin-left: 10px;">
+                                        <label for="text_color">Color de texto</label>
+                                        <input type="color" id="text_color" name="text_color" class="form-control jscolor" value="{{ $eventType->text_color }}" required>
+                                    </div>
+                                    <div style="flex: 1; margin-left: 10px;">
+                                        <label for="border_color">Color de los bordes</label>
+                                        <input type="color" id="border_color" name="border_color" class="form-control jscolor" value="{{ $eventType->border_color }}" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
               
           </td>
           <td>
