@@ -4,11 +4,10 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    {{-- <h1>Dashboard</h1> --}}
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
     <div id='calendar'></div>
 
     <div class="modal fade" id="createEventModal" tabindex="-1" aria-labelledby="createEventModalLabel" aria-hidden="true">
@@ -38,9 +37,9 @@
                         <div class="form-group">
                             <label for="event_type_id">Tipo de Evento</label>
                             <select name="event_type_id" class="form-control" required>
-                                {{-- @foreach ($eventTypes as $eventType)
+                                @foreach ($eventTypes as $eventType)
                                     <option value="{{ $eventType->id }}">{{ $eventType->name }}</option>
-                                @endforeach --}}
+                                @endforeach
                             </select>
                         </div>
                     </div>

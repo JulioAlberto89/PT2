@@ -343,7 +343,7 @@ return [
                     ],
                     [
                         'text' => 'Calendario',
-                        'url' => 'home',
+                        'url' => 'events',
                     ],
                 ],
         ],

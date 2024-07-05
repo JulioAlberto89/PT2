@@ -11,13 +11,14 @@ class EventController extends Controller
     public function index()
     {
         $events = Event::with('eventType')->get();
-        return view('events.index', compact('events'));
+        $eventTypes = EventType::all();
+        return view('events.index', compact('events', 'eventTypes'));
     }
 
     public function create()
     {
         $eventTypes = EventType::all();
-        return view('events.create', compact('eventTypes'));
+        return view('events.index', compact('eventTypes'));
     }
 
     public function store(Request $request)
