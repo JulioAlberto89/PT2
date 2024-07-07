@@ -11,13 +11,16 @@ class ApiEventController extends Controller
 {
     public function index()
     {
-        $events = Event::all()->map(function ($event) {
+        $events = Event::with('eventType')->get()->map(function ($event) {
             return [
                 'id' => $event->id,
                 'title' => $event->title,
                 'start' => Carbon::parse($event->start_date)->toIso8601String(),
                 'end' => Carbon::parse($event->end_date)->toIso8601String(),
                 'event_type_id' => $event->event_type_id,
+                'backgroundColor' => $event->eventType->background_color,
+                'borderColor' => $event->eventType->border_color,
+                'textColor' => $event->eventType->text_color,
             ];
         });
         return response()->json($events);
