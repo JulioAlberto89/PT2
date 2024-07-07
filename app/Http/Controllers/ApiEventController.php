@@ -23,6 +23,20 @@ class ApiEventController extends Controller
         return response()->json($events);
     }
 
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required|max:255',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
+            'event_type_id' => 'required|exists:event_types,id',
+        ]);
+
+        $event = Event::create($request->all());
+
+        return response()->json($event);
+    }
+
     public function update(Event $event, Request $request)
     {
         $request->validate([
@@ -39,22 +53,11 @@ class ApiEventController extends Controller
 
     public function destroy(Event $event)
     {
-        $event->delete();
-
-        return response()->json(['success' => true]);
-    }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'title' => 'required|max:255',
-            'start_date' => 'required|date',
-            'end_date' => 'required|date|after_or_equal:start_date',
-            'event_type_id' => 'required|exists:event_types,id',
-        ]);
-
-        $event = Event::create($request->all());
-
-        return response()->json($event);
+        if ($event) {
+            $event->delete();
+            return response()->json(['success' => true]);
+        } else {
+            return response()->json(['error' => 'Evento no encontrado'], 404);
+        }
     }
 }

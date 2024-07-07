@@ -29,9 +29,9 @@ Route::resource('events', EventController::class);
 Route::resource('event-types', EventTypeController::class);
 
 Route::get('/api/events', [ApiEventController::class, 'index']);
+Route::post('/api/events', [ApiEventController::class, 'store']);
 Route::put('/api/events/{event}', [ApiEventController::class, 'update']);
 Route::delete('/api/events/{event}', [ApiEventController::class, 'destroy']);
-Route::post('/api/events', [ApiEventController::class, 'store']);
 
 Route::get('/', function () {
     $eventTypes = EventType::all();

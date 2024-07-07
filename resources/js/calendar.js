@@ -125,19 +125,27 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    $('#deleteEvent').on('click', function() {
-        const eventId = $('#editEventId').val();
-        const url = `/events/${eventId}`;
+    $("#deleteEvent").on("click", function (e) {
+        e.preventDefault();
+        const eventId = $("#editEventId").val();
+        const url = `/api/events/${eventId}`;
+        const data = $("#editEventForm").serialize();
         $.ajax({
             url: url,
-            type: 'DELETE',
-            success: function(response) {
-                $('#eventModal').modal('hide');
-                calendar.refetchEvents();
+            type: "DELETE",
+            data: data,
+            success: function (response) {
+                if (response.success) {
+                    $("#eventModal").modal("hide");
+                    calendar.refetchEvents();
+                } else {
+                    alert("Error al eliminar el evento.");
+                }
             },
-            error: function(error) {
-                alert('Error al eliminar el evento.');
-            }
+            error: function (error) {
+                console.error("Error al eliminar el evento:", error);
+                alert("Error al eliminar el evento.");
+            },
         });
     });
 });
