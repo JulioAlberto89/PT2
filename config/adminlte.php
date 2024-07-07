@@ -327,6 +327,7 @@ return [
             'text' => 'Perfil',
             'url' => 'users',
             'icon' => 'fas fa-fw fa-user',
+            'can'  => 'isAdmin',
         ],
         [
             'text' => 'Calendario',
