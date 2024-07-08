@@ -330,8 +330,8 @@ return [
             'can'  => 'isAdmin',
         ],
         [
-                'text' => 'Calendario',
-                'icon' => 'fas fa-fw fa-calendar',
+                'text' => 'Inicio',
+                'icon' => 'fas fa-fw fa-home',
                 'submenu' => [
                     [
                         'text' => 'Tipo de evento',
