@@ -38,6 +38,7 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'type' => 'user',
+            'activado' => $request->activado ?? false,
         ]);
 
         return redirect()->route('users')->with('success', 'User creado correctamente.');
@@ -62,6 +63,7 @@ class UserController extends Controller
                 'username' => $request->username,
                 'email' => $request->email,
                 'password' => Hash::make($request->password),
+                'activado' => $request->has('activado'),
             ]);
 
             return redirect()->route('users')->with('success', 'User editado correctamente.');

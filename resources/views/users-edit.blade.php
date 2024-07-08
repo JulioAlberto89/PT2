@@ -103,6 +103,21 @@
             @enderror
         </div>
 
+        {{-- Activado field --}}
+        <div class="form-group">
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="activado" class="custom-control-input" id="activadoCheck"
+                       {{ old('activado', $user->activado) ? 'checked' : '' }}>
+                <label class="custom-control-label" for="activadoCheck">{{ __('Activado') }}</label>
+            </div>
+        
+            @error('activado')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+        </div>
+
         {{-- Update button --}}
         <button type="submit" class="btn btn-block {{ config('adminlte.classes_auth_btn', 'btn-flat btn-primary') }}">
             <span class="fas fa-user-edit"></span>

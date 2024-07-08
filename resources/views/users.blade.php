@@ -18,7 +18,7 @@
           <th scope="col">Name</th>
           <th scope="col">Login</th>
           <th scope="col">Email</th>
-          <th scope="col">Activada</th>
+          <th scope="col">Activado</th>
           <th scope="col">Editar</th>
           <th scope="col">Eliminar</th>
         </tr>
@@ -29,7 +29,7 @@
           <td>{{$user->username}}</td>
           <td>{{$user->email}}</td>
           <td>
-            @if ($user->type == 'admin')
+            @if ($user->activado == '1')
                 Sí
             @else
                 No

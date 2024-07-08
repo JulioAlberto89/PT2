@@ -53,8 +53,21 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     calendar.render();
 
+    function validateDates(startDate, endDate) {
+        if (new Date(startDate) > new Date(endDate)) {
+            alert('La fecha de inicio no puede ser posterior a la fecha de fin.');
+            return false;
+        }
+        return true;
+    }
+
     $('#createEventForm').on('submit', function(e) {
         e.preventDefault();
+        const startDate = $('#eventStart').val();
+        const endDate = $('#eventEnd').val();
+        if (!validateDates(startDate, endDate)) {
+            return;
+        }
         const data = $(this).serialize();
         $.ajax({
             url: '/api/events',
@@ -73,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
     $('#editEventForm').on('submit', function(e) {
         e.preventDefault();
+        const startDate = $('#editEventStart').val();
+        const endDate = $('#editEventEnd').val();
+        if (!validateDates(startDate, endDate)) {
+            return;
+        }
         const eventId = $('#editEventId').val();
         const url = `/api/events/${eventId}`;
         const data = $(this).serialize();

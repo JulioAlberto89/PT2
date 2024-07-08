@@ -30,8 +30,8 @@ class ApiEventController extends Controller
     {
         $request->validate([
             'title' => 'required|max:255',
-            'start_date' => 'required|date_format:Y-m-d H:i:s',
-            'end_date' => 'required|date_format:Y-m-d H:i:s|after_or_equal:start_date',
+            'start_date' => 'required|date',
+            'end_date' => 'required|date|after_or_equal:start_date',
             'event_type_id' => 'required|exists:event_types,id',
         ]);
 
