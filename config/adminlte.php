@@ -313,7 +313,7 @@ return [
         [
             'text' => 'blog',
             'url' => 'admin/blog',
-            'can' => 'manage-blog',
+            'can' => 'isAdmin',
         ],
         // [
         //     'text' => 'pages',
