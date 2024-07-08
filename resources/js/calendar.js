@@ -13,9 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         initialView: 'dayGridMonth',
         dateClick: function(info) {
             $('#createEventModal').modal('show');
-            $('#eventStart').val(info.dateStr);
-            $('#eventEnd').val(info.dateStr);
-        },
+            let dateWithTime = info.dateStr + ' ' + new Date().toTimeString().slice(0,8);
+            $('#eventStart').val(dateWithTime);
+            $('#eventEnd').val(dateWithTime);
+        },        
         events: '/api/events',
         editable: true,
         eventDrop: function(info) {
@@ -111,7 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
             },
             error: function (error) {
                 console.error("Error al eliminar el evento:", error);
-                alert("Error al eliminar el evento.");
+                alert("Error al encontrar el evento.");
             },
         });
     });

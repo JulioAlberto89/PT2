@@ -28,11 +28,11 @@
                         </div>
                         <div class="form-group">
                             <label for="start_date">Fecha de Inicio</label>
-                            <input type="date" name="start_date" class="form-control" required>
+                            <input type="datetime-local" name="start_date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="end_date">Fecha de Fin</label>
-                            <input type="date" name="end_date" class="form-control" required>
+                            <input type="datetime-local" name="end_date" class="form-control" required>
                         </div>
                         <div class="form-group">
                             <label for="event_type_id">Tipo de Evento</label>
@@ -73,11 +73,11 @@
                         </div>
                         <div class="form-group">
                             <label for="editEventStart">Fecha de inicio</label>
-                            <input type="date" class="form-control" id="editEventStart" name="start_date" required>
+                            <input type="datetime-local" class="form-control" id="editEventStart" name="start_date" required>
                         </div>
                         <div class="form-group">
                             <label for="editEventEnd">Fecha de fin</label>
-                            <input type="date" class="form-control" id="editEventEnd" name="end_date" required>
+                            <input type="datetime-local" class="form-control" id="editEventEnd" name="end_date" required>
                         </div>
                         <div class="form-group">
                             <label for="editEventTypeId">Tipo de evento</label>
