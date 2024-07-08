@@ -42,14 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#eventModal").modal("show");
             $("#editEventTitle").val(event.title);
 
-            let startDate = new Date(event.startStr);
-            let endDate = new Date(event.endStr);
+            let startDate = new Date(event.start);
+            let endDate = new Date(event.end);
 
-            let formattedStartDate = startDate.toISOString().split("T")[0];
-            let formattedEndDate = endDate.toISOString().split("T")[0];
-
-            $("#editEventStart").val(formattedStartDate);
-            $("#editEventEnd").val(formattedEndDate);
+            $("#editEventStart").val(startDate.toISOString().slice(0, 16));
+            $("#editEventEnd").val(endDate.toISOString().slice(0, 16));
             $("#editEventTypeId").val(event.extendedProps.event_type_id);
             $("#editEventId").val(event.id);
         }
