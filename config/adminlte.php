@@ -306,15 +306,15 @@ return [
         ],
 
         // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
-        [
-            'text' => 'blog',
-            'url' => 'admin/blog',
-            'can' => 'isAdmin',
-        ],
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
+        // [
+        //     'text' => 'blog',
+        //     'url' => 'admin/blog',
+        //     'can' => 'isAdmin',
+        // ],
         // [
         //     'text' => 'pages',
         //     'url' => 'admin/pages',
@@ -330,20 +330,17 @@ return [
             'can'  => 'isAdmin',
         ],
         [
-            'text' => 'Calendario',
-            'url' => 'home',
-            'icon' => 'fas fa-fw fa-lock',
-        ],
-        [
-                'text' => 'Calendario (Prueba)',
-                'icon' => 'fas fa-fw fa-share',
+                'text' => 'Calendario',
+                'icon' => 'fas fa-fw fa-calendar',
                 'submenu' => [
                     [
                         'text' => 'Tipo de evento',
+                        'icon' => 'fas fa-fw fa-calendar-week',
                         'url' => 'event-types',
                     ],
                     [
                         'text' => 'Calendario',
+                        'icon' => 'fas fa-fw fa-calendar',
                         'url' => 'events',
                     ],
                 ],
