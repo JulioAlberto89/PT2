@@ -337,6 +337,7 @@ return [
                         'text' => 'Tipo de evento',
                         'icon' => 'fas fa-fw fa-calendar-week',
                         'url' => 'event-types',
+                        'can'  => 'isAdmin',
                     ],
                     [
                         'text' => 'Calendario',
